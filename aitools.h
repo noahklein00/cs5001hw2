@@ -26,6 +26,10 @@ template <std::size_t numLayers>
 class values {
     public:
         void setColumn(const std::size_t index, const std::vector<double>& col);
+        void print() const noexcept;
+        std::vector<double>& operator[](const std::size_t index) { return outputs[index]; }
+        const std::vector<double>& operator[](const std::size_t index) const { return outputs[index]; }
+        std::size_t size() const noexcept { return outputs.size(); }
     private:
         std::array<std::vector<double>, numLayers> outputs;
 };

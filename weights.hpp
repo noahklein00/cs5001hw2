@@ -19,10 +19,10 @@ weights<numLayers>::weights(const std::array<std::pair<std::size_t, std::size_t>
 
 template <std::size_t numLayers>
 void weights<numLayers>::print() const noexcept {
-    std::size_t layerCount = numLayers;
-    std::size_t nodeCount = 1;
+    std::size_t layerCount = 0;
+    std::size_t nodeCount = 0;
     for(const auto& layer : mesh) {
-        std::cout << "Layer " << layerCount-- << "\n";
+        std::cout << "Layer " << layerCount++ << "\n";
         for(const auto& node : layer) {
             std::cout << "\tNode " << nodeCount++ << "\n";
             std::cout << "\t\t";
